@@ -1,0 +1,23 @@
+# Team planning docs: shared separately, never pushed
+docs/
+
+# Build output
+build/
+build-*/
+out/
+cmake-build-*/
+_deps/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Editors and IDEs
+.vscode/
+.idea/
+.vs/
+*.user
+*.swp
+.DS_Store
+
+# Files the app writes while running
+imgui.ini

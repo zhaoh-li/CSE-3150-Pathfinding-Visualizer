@@ -1,0 +1,23 @@
+# Runs on every pull request and every push to main (owner: A).
+# Builds everything except the graphics app, then runs every test program.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure (no graphics)
+        run: cmake -S . -B build -DPF_BUILD_GRAPHICS=OFF -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure
