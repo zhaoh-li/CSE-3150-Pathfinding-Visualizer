@@ -10,7 +10,7 @@ pf_test(test_contracts
 )
 
 # Each owner uncomments their own line in week 1, once their test file exists.
-# pf_test(test_core     SOURCES test_core.cpp     DEPS pf_core)                    # A
+pf_test(test_core     SOURCES test_core.cpp     DEPS pf_core)                    # A
 # pf_test(test_problems SOURCES test_problems.cpp DEPS pf_problems)                # B
 # pf_test(test_gen      SOURCES test_gen.cpp      DEPS pf_gen pf_editor)           # D
 # pf_test(test_geo      SOURCES test_geo.cpp      DEPS pf_geo pf_io)               # E
