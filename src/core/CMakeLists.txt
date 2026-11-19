@@ -3,5 +3,7 @@
 # While SOURCES is empty, this folder builds as a header-only library.
 pf_library(pf_core
     SOURCES
-    DEPS 
+        Graph.cpp
+        Algorithm.cpp
+    DEPS
 )

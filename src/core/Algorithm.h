@@ -23,11 +23,14 @@ public:
     const RunStats& stats() const;
 protected:
     void reset(const Graph& g, NodeId start, NodeId goal);
+    bool validEndpoints() const;                                       // are start_ and goal_ real nodes?
     void buildPath();                                                  // follows parent_ back from the goal
     const Graph* graph_ = nullptr;
     NodeId start_ = -1, goal_ = -1;
     std::vector<NodeState> states_;
     std::vector<NodeId> parent_;
+    Path path_;                                                        // empty until the search finishes
+    bool finished_ = false;                                            // step() returns false once true
     RunStats stats_;
 };
 
